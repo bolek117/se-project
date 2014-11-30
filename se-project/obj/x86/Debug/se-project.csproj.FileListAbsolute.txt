@@ -1,0 +1,9 @@
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\bin\Debug\se-project.exe
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\bin\Debug\se-project.pdb
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\se_project.Properties.Resources.resources
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\se-project.exe
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\se-project.pdb
+C:\Users\mw\documents\visual studio 2010\Projects\se-project\se-project\obj\x86\Debug\se_project.frmMain.resources
