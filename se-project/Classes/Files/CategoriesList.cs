@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace se_project.Files
+using se_project.Classes.Files;
+
+namespace se_project.Classes.Files
 {
     class CategoriesList
     {
