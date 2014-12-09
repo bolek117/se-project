@@ -7,5 +7,10 @@ namespace se_project.Interfaces.Files
 {
     interface IFile
     {
+        int GetId();
+
+        String GetPath();
+
+        int GetSize();
     }
 }

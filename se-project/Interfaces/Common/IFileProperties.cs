@@ -3,34 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using se_project.Interfaces.Point;
 using se_project.Interfaces.Files;
+using se_project.Interfaces.Point;
+
 namespace se_project.Interfaces.Common
 {
     interface IFileProperties
     {
         /// <summary>
-        /// Gets whole list
+        /// 
         /// </summary>
         /// <returns></returns>
         IPointsList GetPointsList();
 
         /// <summary>
-        /// Sets list to given <paramref name="pointList"/>
+        /// 
         /// </summary>
-        /// <param name="pointList"></param>
+        /// <param name="pointsList"></param>
         /// <returns></returns>
-        bool SetPointList(IPointsList pointList);
+        bool SetPointsList(IPointsList pointsList);
 
         /// <summary>
-        /// Gets actual file
+        /// 
         /// </summary>
         /// <returns></returns>
         IFile GetFile();
 
         /// <summary>
-        /// Sets actual file
+        /// 
         /// </summary>
+        /// <param name="file"></param>
         /// <returns></returns>
         bool SetFile(IFile file);
     }
