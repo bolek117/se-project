@@ -11,7 +11,7 @@ namespace se_project.Interfaces.Files
 
         bool ClearCategoriesList();
 
-        IFileCategory GetCategory(int id);
+        IFileCategory GetCategoryById(int id);
 
         IFileCategory GetNextCategory();
 
