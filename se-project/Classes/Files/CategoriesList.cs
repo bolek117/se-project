@@ -30,30 +30,17 @@ namespace se_project.Classes.Files
             position = categoriesList.GetEnumerator();
         }
 
-        /// <summary>
-        /// Returns categories list.
-        /// </summary>
-        /// <returns>Categories list.</returns>
         List<IFileCategory> GetCategoriesList()
         {
             return categoriesList;
         }
 
-        /// <summary>
-        /// Clears category list.
-        /// </summary>
-        /// <returns>True if cleared, else unspecified.</returns>
         bool ClearCategoriesList()
         {
             categoriesList.Clear();
             return true;
         }
 
-        /// <summary>
-        /// Returns category identified by ID.
-        /// </summary>
-        /// <param name="id">ID of category to return by method.</param>
-        /// <returns>Category identified by ID or null if category not found.</returns>
         IFileCategory GetCategoryById(int id)
         {
             foreach(IFileCategory fc in categoriesList)
@@ -67,10 +54,6 @@ namespace se_project.Classes.Files
             return null;
         }
 
-        /// <summary>
-        /// Returns next category from the list.
-        /// </summary>
-        /// <returns>Next category or null if next category not found.</returns>
         IFileCategory GetNextCategory()
         {
             if (position.MoveNext())
@@ -83,32 +66,17 @@ namespace se_project.Classes.Files
             }
         }
 
-        /// <summary>
-        /// Adds category to list.
-        /// </summary>
-        /// <param name="category">Category to add.</param>
-        /// <returns>True if added, else false.</returns>
         bool AddCategory(IFileCategory category)
         {
             categoriesList.Add(category);
             return true;
         }
 
-        /// <summary>
-        /// Removes categoryu from categories list.
-        /// </summary>
-        /// <param name="category">Category to delete.</param>
-        /// <returns>True if removed, else false.</returns>
         bool RemoveCategory(IFileCategory category)
         {
             return categoriesList.Remove(category);
         }
 
-        /// <summary>
-        /// Removes category from categories list identified by <paramref name="id"/>.
-        /// </summary>
-        /// <param name="id">ID of the category to remove.</param>
-        /// <returns>True if removed. False if cannot remove or category not found.</returns>
         bool RemoveCategory(int id)
         {
             foreach (IFileCategory fc in categoriesList)
