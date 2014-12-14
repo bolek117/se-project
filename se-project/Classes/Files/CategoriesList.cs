@@ -34,7 +34,7 @@ namespace se_project.Classes.Files
         /// Returns categories list.
         /// </summary>
         /// <returns>Categories list.</returns>
-        List<IFileCategory> GetCategoriesList()
+        public List<IFileCategory> GetCategoriesList()
         {
             return categoriesList;
         }
@@ -43,7 +43,7 @@ namespace se_project.Classes.Files
         /// Clears category list.
         /// </summary>
         /// <returns>True if cleared, else unspecified.</returns>
-        bool ClearCategoriesList()
+        public bool ClearCategoriesList()
         {
             categoriesList.Clear();
             return true;
@@ -54,7 +54,7 @@ namespace se_project.Classes.Files
         /// </summary>
         /// <param name="id">ID of category to return by method.</param>
         /// <returns>Category identified by ID or null if category not found.</returns>
-        IFileCategory GetCategoryById(int id)
+        public IFileCategory GetCategory(int id)
         {
             foreach(IFileCategory fc in categoriesList)
             {
@@ -71,7 +71,7 @@ namespace se_project.Classes.Files
         /// Returns next category from the list.
         /// </summary>
         /// <returns>Next category or null if next category not found.</returns>
-        IFileCategory GetNextCategory()
+        public IFileCategory GetNextCategory()
         {
             if (position.MoveNext())
             {
@@ -88,7 +88,7 @@ namespace se_project.Classes.Files
         /// </summary>
         /// <param name="category">Category to add.</param>
         /// <returns>True if added, else false.</returns>
-        bool AddCategory(IFileCategory category)
+        public bool AddCategory(IFileCategory category)
         {
             categoriesList.Add(category);
             return true;
@@ -99,7 +99,7 @@ namespace se_project.Classes.Files
         /// </summary>
         /// <param name="category">Category to delete.</param>
         /// <returns>True if removed, else false.</returns>
-        bool RemoveCategory(IFileCategory category)
+        public bool RemoveCategory(IFileCategory category)
         {
             return categoriesList.Remove(category);
         }
@@ -109,7 +109,7 @@ namespace se_project.Classes.Files
         /// </summary>
         /// <param name="id">ID of the category to remove.</param>
         /// <returns>True if removed. False if cannot remove or category not found.</returns>
-        bool RemoveCategory(int id)
+        public bool RemoveCategory(int id)
         {
             foreach (IFileCategory fc in categoriesList)
             {
