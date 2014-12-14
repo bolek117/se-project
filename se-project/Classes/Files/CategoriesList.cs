@@ -27,6 +27,7 @@ namespace se_project.Classes.Files
         /// </summary>
         public CategoriesList()
         {
+            categoriesList = new List<IFileCategory>();
             position = categoriesList.GetEnumerator();
         }
 
@@ -41,7 +42,7 @@ namespace se_project.Classes.Files
             return true;
         }
 
-        public IFileCategory GetCategoryById(int id)
+        public IFileCategory GetCategory(int id)
         {
             foreach(IFileCategory fc in categoriesList)
             {

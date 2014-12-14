@@ -20,7 +20,6 @@ namespace se_project.Interfaces.Files
         /// <returns>True if success, else false.</returns>
         bool SetId(int id);
 
-
         /// <summary>
         /// Retrurns name of the category.
         /// </summary>
