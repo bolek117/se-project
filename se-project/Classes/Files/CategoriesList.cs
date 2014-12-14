@@ -25,23 +25,23 @@ namespace se_project.Classes.Files
         /// <summary>
         /// Default constructor. Initializes internal variables.
         /// </summary>
-        CategoriesList()
+        public CategoriesList()
         {
             position = categoriesList.GetEnumerator();
         }
 
-        List<IFileCategory> GetCategoriesList()
+        public List<IFileCategory> GetCategoriesList()
         {
             return categoriesList;
         }
 
-        bool ClearCategoriesList()
+        public bool ClearCategoriesList()
         {
             categoriesList.Clear();
             return true;
         }
 
-        IFileCategory GetCategoryById(int id)
+        public IFileCategory GetCategoryById(int id)
         {
             foreach(IFileCategory fc in categoriesList)
             {
@@ -54,7 +54,7 @@ namespace se_project.Classes.Files
             return null;
         }
 
-        IFileCategory GetNextCategory()
+        public IFileCategory GetNextCategory()
         {
             if (position.MoveNext())
             {
@@ -66,18 +66,18 @@ namespace se_project.Classes.Files
             }
         }
 
-        bool AddCategory(IFileCategory category)
+        public bool AddCategory(IFileCategory category)
         {
             categoriesList.Add(category);
             return true;
         }
 
-        bool RemoveCategory(IFileCategory category)
+        public bool RemoveCategory(IFileCategory category)
         {
             return categoriesList.Remove(category);
         }
 
-        bool RemoveCategory(int id)
+        public bool RemoveCategory(int id)
         {
             foreach (IFileCategory fc in categoriesList)
             {
