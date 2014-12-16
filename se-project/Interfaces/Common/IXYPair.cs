@@ -8,37 +8,37 @@ namespace se_project.Interfaces.Common
     interface IXYPair
     {
         /// <summary>
-        /// 
+        /// Getter for X value.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Width parameter of size or point coordinate</returns>
         int GetX();
 
         /// <summary>
-        /// 
+        /// Setter for X value.
         /// </summary>
-        /// <param name="x"></param>
-        /// <returns></returns>
+        /// <param name="x">Width parameter of size or point coordinate</param>
+        /// <returns>True if attributes match, false otherwise</returns>
         bool SetX(int x);
 
         /// <summary>
-        /// 
+        /// Getter for X value.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Height parameter of size or point coordinate</returns>
         int GetY();
 
         /// <summary>
-        /// 
+        /// Setter for X value.
         /// </summary>
-        /// <param name="y"></param>
-        /// <returns></returns>
+        /// <param name="y">Height parameter of size or point coordinate</param>
+        /// <returns>True if attributes match, false otherwise</returns>
         bool SetY(int y);
         
         /// <summary>
-        /// 
+        /// Setter for X and Y values.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
+        /// <param name="x">Width parameter of size or point coordinate</param>
+        /// <param name="y">Height parameter of size or point coordinate</param>
+        /// <returns>True if attributes match, false otherwise</returns>
         bool SetXY(int x, int y);
 
     }
