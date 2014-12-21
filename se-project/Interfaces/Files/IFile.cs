@@ -5,7 +5,7 @@ using System.Text;
 
 namespace se_project.Interfaces.Files
 {
-    interface IFile
+    public interface IFile
     {
         /// <summary>
         /// Gets file's id
@@ -18,13 +18,13 @@ namespace se_project.Interfaces.Files
         /// </summary>
         /// <returns>File's path</returns>
         String GetPath();
-        
+
         /// <summary>
         /// Gets file's size
         /// </summary>
         /// <returns>File's size</returns>
         long GetSize();
-        
+
         /// <summary>
         /// Sets file's id
         /// </summary>

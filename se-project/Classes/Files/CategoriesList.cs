@@ -10,7 +10,7 @@ namespace se_project.Classes.Files
     /// <summary>
     /// Class storing categories list.
     /// </summary>
-    class CategoriesList : ICategoriesList
+    public class CategoriesList : ICategoriesList
     {
         /// <summary>
         /// List storing categories list.
@@ -20,7 +20,7 @@ namespace se_project.Classes.Files
         /// <summary>
         /// Internal value storing actual position in the list.
         /// </summary>
-        private List<IFileCategory>.Enumerator position;
+        protected List<IFileCategory>.Enumerator position;
 
         /// <summary>
         /// Default constructor. Initializes internal variables.
@@ -57,6 +57,11 @@ namespace se_project.Classes.Files
 
         public IFileCategory GetNextCategory()
         {
+            if (position.Current == null)
+            {
+                position = categoriesList.GetEnumerator();
+            }
+
             if (position.MoveNext())
             {
                 return position.Current;

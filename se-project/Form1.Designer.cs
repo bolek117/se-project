@@ -32,12 +32,16 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.tcToolbar = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tvTypesList = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAddSearch = new System.Windows.Forms.TextBox();
             this.btnAddSearch = new System.Windows.Forms.Button();
+            this.gvTypes = new System.Windows.Forms.DataGridView();
+            this.TypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gvObjects = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +49,9 @@
             this.pX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.gvTypes = new System.Windows.Forms.DataGridView();
             this.gbActions = new System.Windows.Forms.GroupBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnPrev = new System.Windows.Forms.ToolStripButton();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
@@ -58,22 +61,20 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeIcon = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.tcToolbar.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTypes)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvObjects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTypes)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -117,17 +118,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(255, 378);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -189,6 +179,55 @@
             this.btnAddSearch.Text = "+";
             this.btnAddSearch.UseVisualStyleBackColor = true;
             // 
+            // gvTypes
+            // 
+            this.gvTypes.AllowUserToOrderColumns = true;
+            this.gvTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvTypes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TypeId,
+            this.TypeName,
+            this.TypeIcon});
+            this.gvTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvTypes.Location = new System.Drawing.Point(3, 310);
+            this.gvTypes.Name = "gvTypes";
+            this.gvTypes.RowHeadersVisible = false;
+            this.gvTypes.Size = new System.Drawing.Size(262, 174);
+            this.gvTypes.TabIndex = 2;
+            // 
+            // TypeId
+            // 
+            this.TypeId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TypeId.FillWeight = 77F;
+            this.TypeId.HeaderText = "TypeID";
+            this.TypeId.MinimumWidth = 44;
+            this.TypeId.Name = "TypeId";
+            this.TypeId.Width = 67;
+            // 
+            // TypeName
+            // 
+            this.TypeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypeName.HeaderText = "Name";
+            this.TypeName.Name = "TypeName";
+            // 
+            // TypeIcon
+            // 
+            this.TypeIcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TypeIcon.HeaderText = "Icon";
+            this.TypeIcon.Name = "TypeIcon";
+            this.TypeIcon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TypeIcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(274, 527);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -201,7 +240,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.28514F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.71486F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(249, 372);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(268, 521);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // gvObjects
@@ -218,7 +257,7 @@
             this.gvObjects.Location = new System.Drawing.Point(3, 3);
             this.gvObjects.Name = "gvObjects";
             this.gvObjects.RowHeadersVisible = false;
-            this.gvObjects.Size = new System.Drawing.Size(243, 259);
+            this.gvObjects.Size = new System.Drawing.Size(262, 365);
             this.gvObjects.TabIndex = 0;
             // 
             // Id
@@ -255,30 +294,23 @@
             this.Select.Name = "Select";
             this.Select.Width = 43;
             // 
-            // gvTypes
-            // 
-            this.gvTypes.AllowUserToOrderColumns = true;
-            this.gvTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTypes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TypeId,
-            this.TypeName,
-            this.TypeIcon});
-            this.gvTypes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvTypes.Location = new System.Drawing.Point(3, 310);
-            this.gvTypes.Name = "gvTypes";
-            this.gvTypes.RowHeadersVisible = false;
-            this.gvTypes.Size = new System.Drawing.Size(262, 174);
-            this.gvTypes.TabIndex = 2;
-            // 
             // gbActions
             // 
             this.gbActions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbActions.Location = new System.Drawing.Point(3, 268);
+            this.gbActions.Location = new System.Drawing.Point(3, 374);
             this.gbActions.Name = "gbActions";
-            this.gbActions.Size = new System.Drawing.Size(243, 101);
+            this.gbActions.Size = new System.Drawing.Size(262, 144);
             this.gbActions.TabIndex = 1;
             this.gbActions.TabStop = false;
             this.gbActions.Text = "Actions";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(570, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStrip1
             // 
@@ -295,14 +327,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(570, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(570, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // btnFirst
             // 
@@ -376,38 +400,24 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadFilesToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // loadFilesToolStripMenuItem
+            // 
+            this.loadFilesToolStripMenuItem.Name = "loadFilesToolStripMenuItem";
+            this.loadFilesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.loadFilesToolStripMenuItem.Text = "Load files";
+            this.loadFilesToolStripMenuItem.Click += new System.EventHandler(this.loadFilesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // TypeId
-            // 
-            this.TypeId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TypeId.FillWeight = 77F;
-            this.TypeId.HeaderText = "TypeID";
-            this.TypeId.MinimumWidth = 44;
-            this.TypeId.Name = "TypeId";
-            this.TypeId.Width = 67;
-            // 
-            // TypeName
-            // 
-            this.TypeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TypeName.HeaderText = "Name";
-            this.TypeName.Name = "TypeName";
-            // 
-            // TypeIcon
-            // 
-            this.TypeIcon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TypeIcon.HeaderText = "Icon";
-            this.TypeIcon.Name = "TypeIcon";
-            this.TypeIcon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TypeIcon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmMain
             // 
@@ -427,13 +437,13 @@
             this.splitContainer.ResumeLayout(false);
             this.tcToolbar.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTypes)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvObjects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTypes)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -478,6 +488,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeName;
         private System.Windows.Forms.DataGridViewImageColumn TypeIcon;
+        private System.Windows.Forms.ToolStripMenuItem loadFilesToolStripMenuItem;
 
     }
 }

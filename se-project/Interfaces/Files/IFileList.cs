@@ -5,7 +5,7 @@ using System.Text;
 
 namespace se_project.Interfaces.Files
 {
-    interface IFileList
+    public interface IFileList
     {
         /// <summary>
         /// Gets order of the file in the list by specifying its object 
