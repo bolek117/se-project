@@ -32,12 +32,20 @@ namespace se_project.Classes.Files
 
         public int GetOrder(IFile file)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < filesList.Capacity; i++)
+                if (filesList.ElementAt(i) == file)
+                    return i;
+            return -1;
         }
 
         public int GetOrder(int fileId)
         {
-            throw new NotImplementedException();
+            foreach (IFile iFile in filesList)
+            {
+                if (iFile.GetId() == fileId)
+                    return filesList.IndexOf(iFile);
+            }
+            return -1;
         }
 
         public bool SetOrder(int fileId, int order)
@@ -52,7 +60,10 @@ namespace se_project.Classes.Files
 
         public IFile GetFile(int fileId)
         {
-            throw new NotImplementedException();
+            foreach (IFile iFile in filesList)
+                if (iFile.GetId() == fileId)
+                    return iFile;
+            return null;
         }
 
         public IFile GetNextFile()
