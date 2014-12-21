@@ -54,6 +54,7 @@
     <Compile Include="Classes\Files\FileCategory.cs" />
     <Compile Include="Classes\Files\FileList.cs" />
     <Compile Include="Classes\Files\FileProperties.cs" />
+    <Compile Include="Classes\Gui\FilesListGUI.cs" />
     <Compile Include="Classes\Image\ImageCanvas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace se_project.Interfaces.Files
 {
-    interface ICategoriesList
+    public interface ICategoriesList
     {
         /// <summary>
         /// Returns categories list.

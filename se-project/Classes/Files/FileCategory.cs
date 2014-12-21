@@ -1,9 +1,8 @@
 ﻿using System;
+using se_project.Interfaces.Files;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using se_project.Interfaces.Files;
 
 namespace se_project.Classes.Files
 {
@@ -41,6 +40,12 @@ namespace se_project.Classes.Files
         public IFileList GetFilesList()
         {
             return filesList;
+        }
+
+        public bool SetFileList(IFileList filesList)
+        {
+            this.filesList = filesList;
+            return true;
         }
     }
 }

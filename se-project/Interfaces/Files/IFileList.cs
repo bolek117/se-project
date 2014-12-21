@@ -5,7 +5,7 @@ using System.Text;
 
 namespace se_project.Interfaces.Files
 {
-    interface IFileList
+    public interface IFileList
     {
         int GetOrder(IFile file);
         int GetOrder(int fileId);

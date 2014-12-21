@@ -5,7 +5,7 @@ using System.Text;
 
 namespace se_project.Interfaces.Files
 {
-    interface IFileCategory
+    public interface IFileCategory
     {
         /// <summary>
         /// Returns unique identifier of the category
@@ -38,5 +38,12 @@ namespace se_project.Interfaces.Files
         /// </summary>
         /// <returns>List of files.</returns>
         IFileList GetFilesList();
+
+        /// <summary>
+        /// Sets list of files.
+        /// </summary>
+        /// <param name="fileList">Object of file list</param>
+        /// <returns>True if success, else false.</returns>
+        bool SetFileList(IFileList fileList);
     }
 }
