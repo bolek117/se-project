@@ -12,21 +12,25 @@ namespace se_project.Interfaces.Files
         /// </summary>
         /// <returns>File's id</returns>
         int GetId();
+
         /// <summary>
         /// Gets file's path
         /// </summary>
         /// <returns>File's path</returns>
         String GetPath();
+        
         /// <summary>
         /// Gets file's size
         /// </summary>
         /// <returns>File's size</returns>
         long GetSize();
+        
         /// <summary>
         /// Sets file's id
         /// </summary>
         /// <param name="id">File's id</param>
         void SetId(int id);
+        
         /// <summary>
         /// Sets file's path
         /// </summary>

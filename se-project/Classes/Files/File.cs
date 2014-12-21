@@ -13,14 +13,17 @@ namespace se_project.Classes.Files
         /// File's id
         /// </summary>
         int id;
+
         /// <summary>
         /// Path to a file
         /// </summary>
         string path;
+
         /// <summary>
         /// File's size
         /// </summary>
         long size;
+
         /// <summary>
         /// For obtaining file's information
         /// </summary>
@@ -59,7 +62,6 @@ namespace se_project.Classes.Files
         {
             return size;
         }
-
 
         public void SetId(int id)
         {
