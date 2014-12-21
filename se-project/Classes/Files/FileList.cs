@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using se_project.Interfaces.Files;
@@ -19,7 +20,7 @@ namespace se_project.Classes.Files
         /// <summary>
         /// Internal value storing actual position in the list.
         /// </summary>
-        private List<IFile>.Enumerator position;
+        private IEnumerator position;
 
         /// <summary>
         /// Default constructor. Initializes internal variables.
@@ -50,12 +51,34 @@ namespace se_project.Classes.Files
 
         public bool SetOrder(int fileId, int order)
         {
-            throw new NotImplementedException();
+            int index = GetOrder(fileId);
+            if (index == -1)
+                return false;
+            IFile temp = filesList.ElementAt(index);
+            filesList.RemoveAt(index);
+            try
+            {
+                filesList.Insert(order, temp);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                filesList.Insert(index, temp);
+                return false;
+            }
+            return true;
         }
 
         public bool SetOrder(IFile file, int order)
         {
-            throw new NotImplementedException();
+            try
+            {
+                filesList.Insert(order, file);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return false;
+            }
+            return true;
         }
 
         public IFile GetFile(int fileId)
@@ -68,9 +91,14 @@ namespace se_project.Classes.Files
 
         public IFile GetNextFile()
         {
+            if (position.Current == null)
+            {
+                position = filesList.GetEnumerator();
+            }
+
             if (position.MoveNext())
             {
-                return position.Current;
+                return (IFile)position.Current;
             }
             else
             {
@@ -80,7 +108,15 @@ namespace se_project.Classes.Files
 
         public bool ResetPosition()
         {
-            throw new NotImplementedException();
+            try
+            {
+                position.Reset();
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool AddFile(IFile file)

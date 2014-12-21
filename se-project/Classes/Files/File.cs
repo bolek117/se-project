@@ -14,20 +14,20 @@ namespace se_project.Classes.Files
         /// </summary>
         int id;
         /// <summary>
-        /// File's size
-        /// </summary>
-        long size;
-        /// <summary>
         /// Path to a file
         /// </summary>
         string path;
         /// <summary>
+        /// File's size
+        /// </summary>
+        long size;
+        /// <summary>
         /// For obtaining file's information
         /// </summary>
         FileInfo fileInfo;
-        
+
         /// <summary>
-        /// 
+        /// Parameterless constructor
         /// </summary>
         public File()
         {
@@ -39,8 +39,8 @@ namespace se_project.Classes.Files
         /// </summary>
         public File(String path, int id)
         {
-            this.path = path;
             this.id = id;
+            this.path = path;
             this.fileInfo = new FileInfo(path);
             this.size = fileInfo.Length;
         }
