@@ -33,12 +33,34 @@ namespace se_project.Classes.Point
 
         public bool SetOrder(int id, int order)
         {
-            throw new NotImplementedException();
+            int index = GetOrder(id);
+            if (index == -1)
+                return false;
+            IPoint temp = pointsList.ElementAt(index);
+            pointsList.RemoveAt(index);
+            try
+            {
+                pointsList.Insert(order, temp);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                pointsList.Insert(index, temp);
+                return false;
+            }
+            return true;
         }
 
         public bool SetOrder(IPoint point, int order)
         {
-            throw new NotImplementedException();
+            try
+            {
+                pointsList.Insert(order, point);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                return false;
+            }
+            return true;
         }
 
         public IPoint GetFirstPoint()

@@ -5,6 +5,7 @@ using System.Text;
 
 using se_project.Interfaces.Point;
 using se_project.Interfaces.Common;
+using se_project.Classes.Common;
 
 namespace se_project.Classes.Point
 {
@@ -41,7 +42,7 @@ namespace se_project.Classes.Point
 
         public bool SetPosition(int x, int y)
         {
-            position = new XYPair();
+            position = (IXYPair) new XYPair();
             position.SetXY(x, y);
             return true;
         }
