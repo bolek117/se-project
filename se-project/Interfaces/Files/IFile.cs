@@ -12,7 +12,6 @@ namespace se_project.Interfaces.Files
         /// </summary>
         /// <returns>File's id</returns>
         int GetId();
-        bool SetId(int id);
 
         /// <summary>
         /// Gets file's path

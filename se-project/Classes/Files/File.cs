@@ -53,12 +53,6 @@ namespace se_project.Classes.Files
             return id;
         }
 
-        public bool SetId(int id)
-        {
-            this.id = id;
-            return true;
-        }
-
         public string GetPath()
         {
             return path;
