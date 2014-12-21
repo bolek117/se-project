@@ -17,6 +17,7 @@ namespace se_project.Classes.Point
 
         public PointsList()
         {
+            pointsList = new List<IPoint>();
             position = pointsList.GetEnumerator();
         }
 

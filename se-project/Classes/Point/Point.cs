@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using se_project.Interfaces.Point;
+using se_project.Interfaces.Common;
 
 namespace se_project.Classes.Point
 {
@@ -13,9 +14,13 @@ namespace se_project.Classes.Point
     class Point : IPoint
     {
         private int id;
-        private int x;
-        private int y;
-        IPointType type;
+        private IPointType type;
+        private IXYPair position;
+
+        public Point(int id)
+        {
+            this.id = id;
+        }
 
         public int GetId()
         {
@@ -24,24 +29,19 @@ namespace se_project.Classes.Point
 
         public Interfaces.Common.IXYPair GetPosition()
         {
-            throw new NotImplementedException();
+            return position;
         }
 
         public bool SetPosition(Interfaces.Common.IXYPair position)
         {
-            throw new NotImplementedException();
+            this.position = position;
+            return this.position == position;
         }
 
         public bool SetPosition(int x, int y)
         {
-            if (x < 0 || y < 0)
-                return false;
-            else
-            {
-                this.x = x;
-                this.y = y;
-                return true;
-            }
+            position.SetXY(x, y);
+            return true;
         }
 
         public IPointType GetPointType()
@@ -52,7 +52,7 @@ namespace se_project.Classes.Point
         public bool SetPointType(IPointType type)
         {
             this.type = type;
-            return true;
+            return this.type == type;
         }
 
         public bool SetPointType(int id)
