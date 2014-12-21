@@ -9,56 +9,43 @@ namespace se_project.Interfaces.Point
     interface IPoint
     {
         /// <summary>
-        /// 
+        /// Gets id of the point.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Id of the point</returns>
         int GetId();
 
         /// <summary>
-        /// 
+        /// Gets position of the point.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Object containing position of the point</returns>
         IXYPair GetPosition();
 
         /// <summary>
-        /// 
+        /// Sets position of the point.
         /// </summary>
-        /// <param name="position"></param>
-        /// <returns></returns>
+        /// <param name="position">Object containing position of the point</param>
+        /// <returns>True if attributes match, false otherwise</returns>
         bool SetPosition(IXYPair position);
 
         /// <summary>
-        /// 
+        /// Sets position of the point.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
+        /// <param name="x">X coordinate</param>
+        /// <param name="y">Y coordinate</param>
+        /// <returns>True if the position was set correctly</returns>
         bool SetPosition(int x, int y);
 
         /// <summary>
-        /// 
+        /// Gets type of the point.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Object containing type of the point</returns>
         IPointType GetPointType();
 
         /// <summary>
-        /// 
+        /// Sets type of the point.
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">Object containing type of the point</param>
+        /// <returns>True if attributes match, false otherwise</returns>
         bool SetPointType(IPointType type);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        int GetOrder();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="order"></param>
-        /// <returns></returns>
-        bool SetOrder(int order);
     }
 }

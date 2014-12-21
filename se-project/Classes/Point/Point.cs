@@ -15,7 +15,6 @@ namespace se_project.Classes.Point
     class Point : IPoint
     {
         private int id;
-        private int order;
         private IPointType type;
         private IXYPair position;
 
@@ -56,17 +55,6 @@ namespace se_project.Classes.Point
         {
             this.type = type;
             return this.type == type;
-        }
-
-        public int GetOrder()
-        {
-            return order;
-        }
-
-        public bool SetOrder(int order)
-        {
-            this.order = order;
-            return this.order == order;
         }
     }
 }

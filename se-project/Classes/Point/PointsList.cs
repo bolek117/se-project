@@ -92,7 +92,8 @@ namespace se_project.Classes.Point
 
         public bool ResetPosition()
         {
-            throw new NotImplementedException();
+            position = pointsList.GetEnumerator();
+            return true;
         }
 
         public bool ClearPointsList()
