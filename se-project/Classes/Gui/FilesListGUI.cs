@@ -11,17 +11,7 @@ namespace se_project.Classes.Gui
 {
     class FilesListGUI
     {
-        protected static ICategoriesList _categoriesList
-        {
-            get
-            {
-                if (_categoriesList == null)
-                    throw new Exception("Element is null");
-                else
-                    return _categoriesList;
-            }
-            set { }
-        }
+        protected static ICategoriesList _categoriesList { get; set; }
         protected static int categoryIndex = 0;
 
         public FilesListGUI(ICategoriesList categoriesList)

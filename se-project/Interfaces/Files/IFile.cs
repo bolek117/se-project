@@ -29,12 +29,12 @@ namespace se_project.Interfaces.Files
         /// Sets file's id
         /// </summary>
         /// <param name="id">File's id</param>
-        void SetId(int id);
+        bool SetId(int id);
 
         /// <summary>
         /// Sets file's path
         /// </summary>
         /// <param name="path">File's path</param>
-        void SetPath(String path);
+        bool SetPath(String path);
     }
 }

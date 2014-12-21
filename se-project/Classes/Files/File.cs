@@ -71,15 +71,5 @@ namespace se_project.Classes.Files
         {
             return size;
         }
-
-        public void SetId(int id)
-        {
-            this.id = id;
-        }
-
-        public void SetPath(string path)
-        {
-            this.path = path;
-        }
     }
 }

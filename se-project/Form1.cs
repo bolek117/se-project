@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -52,9 +53,11 @@ namespace se_project
                 while ((file = files.GetNextFile()) != null)
                 {
                     TreeNode node = new TreeNode(file.GetPath());
+                    lst.Add(node);
                 }
 
                 TreeNode categoryNode = new TreeNode(fileCategory.GetName(), lst.ToArray());
+                filesList.Nodes.Add(categoryNode);
             }
         }
     }

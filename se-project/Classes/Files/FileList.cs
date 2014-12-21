@@ -57,6 +57,11 @@ namespace se_project.Classes.Files
 
         public IFile GetNextFile()
         {
+            if (position.Current == null)
+            {
+                position = filesList.GetEnumerator();
+            }
+
             if (position.MoveNext())
             {
                 return position.Current;

@@ -57,6 +57,11 @@ namespace se_project.Classes.Files
 
         public IFileCategory GetNextCategory()
         {
+            if (position.Current == null)
+            {
+                position = categoriesList.GetEnumerator();
+            }
+
             if (position.MoveNext())
             {
                 return position.Current;
