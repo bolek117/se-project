@@ -6,8 +6,29 @@ using se_project.Interfaces.Files;
 
 namespace se_project.Classes.Files
 {
+    /// <summary>
+    /// Class storing files list
+    /// </summary>
     class FileList : IFileList
     {
+        /// <summary>
+        /// List storing categories list.
+        /// </summary>
+        protected List<IFile> filesList;
+
+        /// <summary>
+        /// Internal value storing actual position in the list.
+        /// </summary>
+        private List<IFile>.Enumerator position;
+
+        /// <summary>
+        /// Default constructor. Initializes internal variables.
+        /// </summary>
+        public FileList()
+        {
+            filesList = new List<IFile>();
+            position = filesList.GetEnumerator();
+        }
 
         public int GetOrder(IFile file)
         {
@@ -36,7 +57,14 @@ namespace se_project.Classes.Files
 
         public IFile GetNextFile()
         {
-            throw new NotImplementedException();
+            if (position.MoveNext())
+            {
+                return position.Current;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool ResetPosition()
@@ -46,22 +74,32 @@ namespace se_project.Classes.Files
 
         public bool AddFile(IFile file)
         {
-            throw new NotImplementedException();
+            filesList.Add(file);
+            return true;
         }
 
         public bool RemoveFile(IFile file)
         {
-            throw new NotImplementedException();
+            return (filesList.Remove(file));
         }
 
         public bool RemoveFile(int file)
         {
-            throw new NotImplementedException();
+            try
+            {
+                filesList.RemoveAt(file);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool ClearFileList()
         {
-            throw new NotImplementedException();
+            filesList.Clear();
+            return true;
         }
     }
 }
