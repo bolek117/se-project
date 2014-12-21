@@ -20,7 +20,7 @@ namespace se_project.Classes.Files
         /// <summary>
         /// Internal value storing actual position in the list.
         /// </summary>
-        private IEnumerator position;
+        private List<IFile>.Enumerator position;
 
         /// <summary>
         /// Default constructor. Initializes internal variables.
@@ -60,7 +60,7 @@ namespace se_project.Classes.Files
             {
                 filesList.Insert(order, temp);
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
                 filesList.Insert(index, temp);
                 return false;
@@ -107,15 +107,8 @@ namespace se_project.Classes.Files
         }
 
         public bool ResetPosition()
-        {
-            try
-            {
-                position.Reset();
-            }
-            catch (InvalidOperationException)
-            {
-                return false;
-            }
+        {    
+            position = filesList.GetEnumerator();
             return true;
         }
 
