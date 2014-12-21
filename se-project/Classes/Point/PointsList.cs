@@ -23,7 +23,12 @@ namespace se_project.Classes.Point
 
         public int GetOrder(int id)
         {
-            throw new NotImplementedException();
+            foreach (IPoint iPoint in pointsList)
+            {
+                if (iPoint.GetId() == id)
+                    return pointsList.IndexOf(iPoint);
+            }
+            return -1;
         }
 
         public bool SetOrder(int id, int order)

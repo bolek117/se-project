@@ -51,13 +51,6 @@ namespace se_project.Interfaces.Point
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        bool SetPointType(int id);
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <returns></returns>
         int GetOrder();
 

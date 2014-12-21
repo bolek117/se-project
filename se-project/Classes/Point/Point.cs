@@ -14,6 +14,7 @@ namespace se_project.Classes.Point
     class Point : IPoint
     {
         private int id;
+        private int order;
         private IPointType type;
         private IXYPair position;
 
@@ -40,6 +41,7 @@ namespace se_project.Classes.Point
 
         public bool SetPosition(int x, int y)
         {
+            position = new XYPair();
             position.SetXY(x, y);
             return true;
         }
@@ -55,19 +57,15 @@ namespace se_project.Classes.Point
             return this.type == type;
         }
 
-        public bool SetPointType(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public int GetOrder()
         {
-            throw new NotImplementedException();
+            return order;
         }
 
         public bool SetOrder(int order)
         {
-            throw new NotImplementedException();
+            this.order = order;
+            return this.order == order;
         }
     }
 }
