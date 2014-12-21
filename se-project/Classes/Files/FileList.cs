@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using se_project.Interfaces.Files;
@@ -32,27 +33,60 @@ namespace se_project.Classes.Files
 
         public int GetOrder(IFile file)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < filesList.Capacity; i++)
+                if (filesList.ElementAt(i) == file)
+                    return i;
+            return -1;
         }
 
         public int GetOrder(int fileId)
         {
-            throw new NotImplementedException();
+            foreach (IFile iFile in filesList)
+            {
+                if (iFile.GetId() == fileId)
+                    return filesList.IndexOf(iFile);
+            }
+            return -1;
         }
 
         public bool SetOrder(int fileId, int order)
         {
-            throw new NotImplementedException();
+            int index = GetOrder(fileId);
+            if (index == -1)
+                return false;
+            IFile temp = filesList.ElementAt(index);
+            filesList.RemoveAt(index);
+            try
+            {
+                filesList.Insert(order, temp);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                filesList.Insert(index, temp);
+                return false;
+            }
+            return true;
         }
 
         public bool SetOrder(IFile file, int order)
         {
-            throw new NotImplementedException();
+            try
+            {
+                filesList.Insert(order, file);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return false;
+            }
+            return true;
         }
 
         public IFile GetFile(int fileId)
         {
-            throw new NotImplementedException();
+            foreach (IFile iFile in filesList)
+                if (iFile.GetId() == fileId)
+                    return iFile;
+            return null;
         }
 
         public IFile GetNextFile()
@@ -64,7 +98,7 @@ namespace se_project.Classes.Files
 
             if (position.MoveNext())
             {
-                return position.Current;
+                return (IFile)position.Current;
             }
             else
             {
@@ -73,8 +107,9 @@ namespace se_project.Classes.Files
         }
 
         public bool ResetPosition()
-        {
-            throw new NotImplementedException();
+        {    
+            position = filesList.GetEnumerator();
+            return true;
         }
 
         public bool AddFile(IFile file)
@@ -88,11 +123,11 @@ namespace se_project.Classes.Files
             return (filesList.Remove(file));
         }
 
-        public bool RemoveFile(int file)
+        public bool RemoveFile(int fileId)
         {
             try
             {
-                filesList.RemoveAt(file);
+                filesList.RemoveAt(fileId);
             }
             catch (ArgumentOutOfRangeException)
             {
