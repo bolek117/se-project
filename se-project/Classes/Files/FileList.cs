@@ -94,11 +94,11 @@ namespace se_project.Classes.Files
             return (filesList.Remove(file));
         }
 
-        public bool RemoveFile(int file)
+        public bool RemoveFile(int fileId)
         {
             try
             {
-                filesList.RemoveAt(file);
+                filesList.RemoveAt(fileId);
             }
             catch (ArgumentOutOfRangeException)
             {
