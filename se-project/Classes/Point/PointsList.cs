@@ -14,11 +14,13 @@ namespace se_project.Classes.Point
     {
         protected List<IPoint> pointsList;
         private List<IPoint>.Enumerator position;
+        int index;
 
         public PointsList()
         {
             pointsList = new List<IPoint>();
             position = pointsList.GetEnumerator();
+            index = -1;
         }
 
         public int GetOrder(int id)
@@ -77,6 +79,7 @@ namespace se_project.Classes.Point
         {
             if (position.MoveNext())
             {
+                index++;
                 return position.Current;
             }
             else
@@ -87,7 +90,16 @@ namespace se_project.Classes.Point
 
         public IPoint GetPrevPoint()
         {
-            throw new NotImplementedException();
+            if (index == -1)
+                return null;
+            else
+            {
+                position = pointsList.GetEnumerator();
+                for (int i = 0; i < index; i++)
+                    position.MoveNext();
+                index--;
+                return position.Current;
+            }
         }
 
         public bool ResetPosition()
